@@ -1,0 +1,433 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+
+html,
+body {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  // font-size: 100%;
+  font-family: "Raleway", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // Nav component
+  nav {
+    .open-nav {
+      position: fixed;
+      left: 0;
+      width: 2em;
+      height: 2em;
+      margin: 1%;
+      z-index: 100;
+      cursor: pointer;
+      &:hover {
+        animation: zoom 300ms ease-in;
+      }
+      @keyframes zoom {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+    }
+    .lines {
+      background-color: #fff;
+      width: 100%;
+      height: 5px;
+      margin: 5px 0;
+      transition: all 300ms ease-in;
+    }
+    .close-open-nav {
+      .lines {
+        cursor: pointer;
+      }
+      .line-top {
+        transform: translateY(200%) rotate(45deg);
+      }
+      .line-mid {
+        opacity: 0;
+      }
+      .line-bottom {
+        transform: translateY(-200%) rotate(135deg);
+      }
+    }
+    .sidenav {
+      // text-align: center;
+      // position: fixed;
+      // left: 0;
+      // width: 0;
+      // height: 100%;
+      // background-color: black;
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: center;
+      // opacity: 0.9;
+      // transition: all 0.8s ease-in-out;
+      // overflow: hidden;
+      // &.active {
+      //   width: 20%;
+      //   opacity: 1;
+      //   z-index: 0;
+      // }
+      text-align: center;
+      position: fixed;
+      left: 0;
+      width: 15%;
+      height: 100%;
+      font-family: "Abril Fatface", cursive;
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0.9;
+      transform: translateX(-100%);
+      transition: all 0.5s ease-in-out;
+      &.active {
+        transform: translateX(0);
+        opacity: 1;
+        z-index: 0;
+      }
+      a {
+        z-index: 1;
+        width: 50%;
+        margin: 3rem auto 0;
+        text-decoration: none;
+        font-size: 2rem;
+        color: #818181;
+        display: block;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+
+  /* Home page */
+  #Home {
+    text-align: center;
+    .Home-header {
+      background-color: #282c34;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: calc(10px + 2vmin);
+      color: white;
+      .Home-logo {
+        height: 40vmin;
+        pointer-events: none;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        .Home-logo {
+          animation: Home-logo-spin infinite 20s linear;
+        }
+      }
+      @keyframes Home-logo-spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .focus-in-contract-bck {
+        font-family: "Abril Fatface", cursive;
+        padding-top: 3%;
+        animation: focus-in-contract-bck 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+          both;
+        -webkit-animation: focus-in-contract-bck 1s
+          cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        a {
+          // color: #C7C4B9;
+          color: gainsboro;
+          font-size: 4rem;
+          text-align: center;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+      @keyframes focus-in-contract-bck {
+        0% {
+          letter-spacing: 1em;
+          -webkit-transform: translateZ(300px);
+          transform: translateZ(300px);
+          -webkit-filter: blur(12px);
+          filter: blur(12px);
+          opacity: 0;
+        }
+        100% {
+          -webkit-transform: translateZ(12px);
+          transform: translateZ(12px);
+          -webkit-filter: blur(0);
+          filter: blur(0);
+          opacity: 1;
+        }
+      }
+      @-webkit-keyframes focus-in-contract-bck {
+        0% {
+          letter-spacing: 1em;
+          -webkit-transform: translateZ(300px);
+          transform: translateZ(300px);
+          -webkit-filter: blur(12px);
+          filter: blur(12px);
+          opacity: 0;
+        }
+        100% {
+          -webkit-transform: translateZ(12px);
+          transform: translateZ(12px);
+          -webkit-filter: blur(0);
+          filter: blur(0);
+          opacity: 1;
+        }
+      }
+      form {
+        padding-top: 50px;
+        div {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          input {
+            padding: 5px;
+            border: 0;
+            background-color: #ffffff;
+            font-size: 1.2rem;
+            font-family: Arial, Helvetica, sans-serif;
+          }
+        }
+        p {
+          padding-top: 25px;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  /* Contact page */
+  #Client-page {
+    background-color: #282c34;
+    height: 100%;
+    overflow: hidden;
+    .tracking-in-expand {
+      animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1)
+        both;
+      -webkit-animation: tracking-in-expand 0.7s
+        cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      margin: 0 auto;
+      padding: 5% 0;
+      color: gainsboro;
+      font-size: 4rem;
+      font-family: "Abril Fatface", cursive;
+      text-shadow: 1px 1px 2px black;
+      text-align: center;
+    }
+    @keyframes tracking-in-expand {
+      0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+      }
+      40% {
+        opacity: 0.6;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @-webkit-keyframes tracking-in-expand {
+      0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+      }
+      40% {
+        opacity: 0.6;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    #Logout {
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      button {
+        font-size: 1.2em;
+        text-align: center;
+      }
+    }
+    #client {
+      // Client form
+      .input-container {
+        margin: 0 auto 5% auto;
+        padding: 1rem;
+        background-color: #343642;
+        background-image: url("../scss/images/form.svg");
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        // .styled-input.wide {
+        //   width: 100%;
+        //   margin: 0;
+        //   padding: 0;
+        // }
+        .form-input {
+          padding: 0.5rem;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 50%;
+        }
+
+        h3 {
+          padding-top: 5%;
+          color: gainsboro;
+          font-size: 2rem;
+          font-family: "Abril Fatface", cursive;
+          text-align: center;
+        }
+
+        input {
+          padding: 15px;
+          border: 0;
+          width: 100%;
+          background-color: #333333;
+          color: white;
+          font-size: 1.2rem;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input:focus {
+          outline: 0;
+        }
+
+        input:focus ~ label,
+        input:valid ~ label {
+          top: -5px;
+          color: #999;
+          font-size: 0.75rem;
+          -webkit-transition: all 0.225s ease;
+          transition: all 0.225s ease;
+        }
+
+        .datepicker:focus ~ label,
+        .datepicker:valid ~ label {
+          top: -5px;
+          color: #999;
+          font-size: 0.75rem;
+          -webkit-transition: all 0.225s ease;
+          transition: all 0.225s ease;
+        }
+
+        .styled-input {
+          float: left;
+          width: 100%;
+          margin: 1% auto;
+          position: relative;
+          border-radius: 4px;
+          label {
+            padding: 0.5rem 15px 1rem 15px;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            color: #999;
+            font-size: 1.2rem;
+            -webkit-transition: all 0.25s ease;
+            transition: all 0.25s ease;
+            pointer-events: none;
+          }
+        }
+
+        .styled-input-d {
+          float: left;
+          width: 100%;
+          margin: 1% auto;
+          position: relative;
+          border-radius: 4px;
+          label {
+            padding: 0.5rem 15px 1rem 15px;
+            position: absolute;
+            top: -5px;
+            left: 0;
+            color: #999;
+            font-size: 0.75rem;
+            pointer-events: none;
+          }
+        }
+
+        #Button {
+          padding: 1rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .atc-dropdown-title {
+          height: 60px;
+          width: 40%;
+          position: relative;
+          background-color: gainsboro;
+          color: #4c4c4c;
+          font-size: 1.3em;
+          font-family: "Abril Fatface", cursive;
+          text-decoration: none;
+          text-align: center;
+          cursor: pointer;
+        }
+
+        .atc-btn {
+          position: relative;
+          background-color: gainsboro;
+          color: #4c4c4c;
+          font-size: 1.2em;
+          font-family: "Abril Fatface", cursive;
+          text-decoration: none;
+          text-align: center;
+        }
+
+        .atc-dropdown {
+          padding: 0;
+          position: absolute;
+          font-family: "Times New Roman", Times, serif;
+          display: inline-block;
+        }
+
+        .atc-dropdown-item {
+          display: inline-block;
+          overflow: auto;
+          z-index: 1;
+        }
+
+        .atc-dropdown-item a {
+          display: block;
+          width: 80px;
+          color: black;
+          background-color: white;
+          font-size: 1.2em;
+          text-decoration: none;
+          text-align: center;
+        }
+
+        .atc-dropdown-item a:hover {
+          background-color: gainsboro;
+          color: red;
+          transition: all 0.8s ease;
+        }
+      }
+
+      #message {
+        margin: 0 auto;
+        color: gainsboro;
+        font-size: 1.5em;
+        font-family: "Abril Fatface", cursive;
+        text-align: center;
+      }
+    }
+  }
+}
